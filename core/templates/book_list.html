@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block header %}
+<h2>Book list</h2>
+{% endblock %}
+
+{% block content %}
+{% for book in books %}
+<div class="book" id="{{book.pk}}">
+  <a style="font-weight: bold;" href="{% url 'book_detail' book.pk %}">{{ book.title }}</a>
+  <p>{{ book.author }}</p>
+  <p>{{ book.category }}
+</div>
+{% endfor %}
+<a href="{% url 'book_new' %}">
+  <span class=" fa fa-plus text-info" style="font-size: 28px; padding: 0 20px;"></span>
+  Create a new book
+</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+<div>
+  <a href="/">👈 back to book list </a>
+</div>
+
+{% extends "base.html" %}
+
+{% block header %}
+<h2>{{ book.title }} </h2>
+{% endblock %}
+
+{% block content %}
+<div class="book" id="{{ pk }}">
+  <p style="margin: 0 25px 50px;">by {{ book.author }}</p>
+  <a href="{% url 'book_edit' book.pk %}" class="button">Edit</a>
+  <a href="{% url 'book_delete' book.pk %}" class="button button-danger">Delete</a>
+
+</div>
+{% endblock %}
