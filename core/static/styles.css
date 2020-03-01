@@ -1,0 +1,85 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  --base-border-color: gainsboro;
+  --base-border-radius: 3px;
+  --base-background-color: white;
+  --base-spacing: 1.5em;
+  --action-color: #477DCA;
+  --dark-gray: #333;
+  --base-font-color: var(--dark-gray);
+  --card-border-color: var(--base-border-color);
+  --card-border: 1px solid var(--card-border-color);
+  --card-background: var(--card-border-color);
+  --card-header-background: var(--card-background);
+  --card-margin: 1em;
+  --card-image-hover-opacity: 0.7;
+  --card-image-hover-color: #F8F2B4;
+
+  background-color: var(card-background);
+  border: var(card-border);
+  border-radius: var(base-border-radius);
+  box-shadow: 0 2px 4px darken(var(base-background-color), 10%);
+  cursor: pointer;
+  flex-basis: 15em;
+  flex-grow: 1;
+  margin: 0 var(card-margin) var(base-spacing) var(card-margin);
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.card-image {
+    background-color: var(card-image-hover-color);
+    height: 150px;
+    max-height: 150px;
+    overflow: hidden;
+  }
+
+.card-image img {
+      @include border-top-radius(var(base-border-radius));
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+    }
+
+  /* .card-header {
+    background-color: $card-header-background;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+    transition: all 0.2s ease-in-out;
+  } */
+
+.card-copy {
+  font-size: 0.9em;
+  line-height: 1.5em;
+  padding: (var(base-spacing) / 2) (var(base-spacing) / 2);
+
+  p {
+    margin: 0 0 (var(base-spacing) / 2);
+  }
+}
+/*
+  &:focus,
+  &:hover {
+    cursor: pointer;
+
+    img {
+      opacity: $card-image-hover-opacity;
+    }
+  }
+
+  &:active {
+    background-color: $card-background;
+
+    .card-header {
+      background-color: $card-background;
+    }
+  } */
+/* } */

@@ -25,6 +25,7 @@ urlpatterns = [
     path('books/new/', views.book_new, name='book_new'),
     path('books/edit/<int:pk>/', views.book_edit, name="book_edit"),
     path('books/delete/<int:pk>/', views.book_delete, name="book_delete"),
+    path('books/<slug:slug>/', views.books_by_category, name="books_by_category"),
     path('admin/', admin.site.urls),
     path('', views.book_list, name='book_list'),
     path('', RedirectView.as_view(url='/books/'), name='home'),

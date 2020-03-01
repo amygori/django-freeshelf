@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta.25/shoelace.css">
-  {% comment %} <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/> {% endcomment %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
   {% block title %}
   <title>FreeShelf</title>
   {% endblock %}
@@ -17,9 +18,9 @@
   <h1>Freeshelf</h1>
   {% endblock %}
 
-<section class='container'>
+<div class='container'>
   {% block content %}{% endblock %}
-</section>
+</div>
 </body>
 
 </html>

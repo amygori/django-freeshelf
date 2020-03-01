@@ -10,9 +10,13 @@
 
 {% block content %}
 <div class="book" id="{{ pk }}">
-  <p style="margin: 0 25px 50px;">by {{ book.author }}</p>
+  <p class="mar-md">by {{ book.author }}</p>
+  <a href= {% url 'books_by_category' category.slug %} class="badge badge-info badge-xs mar-md">
+    {{ category }}
+  </a>
+  <div class="button-group">
   <a href="{% url 'book_edit' book.pk %}" class="button">Edit</a>
   <a href="{% url 'book_delete' book.pk %}" class="button button-danger">Delete</a>
-
+  </div>
 </div>
 {% endblock %}
