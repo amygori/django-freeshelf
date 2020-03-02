@@ -7,20 +7,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta.25/shoelace.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
   {% block title %}
   <title>FreeShelf</title>
   {% endblock %}
 </head>
+<header class="header bg-info w-100">
+  <div class="header--emoji float-left">📚</div>
+  <div class="float-right">
+    {% if user.is_authenticated %}
+      Hi {{ user.username }}!
+      <a href={% url 'logout' %} class="button button-light login-btn">Log Out</a>
+    {% else %}
+      <a href={% url 'login' %} class="button button-light login-btn">Log In</a>
+    {% endif %}
+  </div>
+</header>
 
 <body>
   {% block header %}
-  <h1>Freeshelf</h1>
+  <h1 class='header--main'>Freeshelf</h1>
   {% endblock %}
 
-<div class='container'>
-  {% block content %}{% endblock %}
-</div>
+  <div class='container'>
+    {% block content %}{% endblock %}
+  </div>
 </body>
 
 </html>
